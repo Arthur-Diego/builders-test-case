@@ -9,21 +9,25 @@ Simple API(Rest) for password validation following specifications
 * Swagger
 * Docker
 #### Solução
+A solução consiste num arquitetura simples de projeto, definidas por camada.
+As principais funções da api consistem em salvar ou atualizar um objeto, usei o mesmo endpoint para isso.
+Listar baseado em paginação.
+Lister usando filtros de todos os campos envolvidos na entidade. Para isso usei alguns recursos como reflection e recursão.
 
+Fiz testes usando restassured, com isso consegui validar minhas chamadas e de também integrar com o banco de dados.
+
+Usei uma classe a ***ApiExceptionHandlerAdvice*** para capturar as exceptions das chamadas ou classes que sejam anotadas com ***@RestController***
+Com isso consigo gerar um feedback mais amigável para o consumidor da API.
 ## Instalação
 ```bash
 git clone https://github.com/Arthur-Diego/builders--case.git
 
 cd builders-testcase/
 
-mvnw package && java -jar target/builders-testcase-docker.jar or ./mvnw package && java -jar target/builders-testcase-docker.jar
-
-docker build -t builders-testcase/builders-testcase-docker .
+./mvnw clean package -DskipTests && docker-compose up --build
 ```
 
 ## Uso
 ```bash
-docker run -p 8080:8080 builders-testcase/builders-testcase-docker .
-
 http://localhost:8080/swagger-ui.html#
 ```
