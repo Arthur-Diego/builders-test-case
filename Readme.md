@@ -22,7 +22,7 @@ Com isso consigo gerar um feedback mais amigável para o consumidor da API.
 ```bash
 git clone https://github.com/Arthur-Diego/builders-test-case.git
 
-cd builders-testcase/
+cd builders-test-case/
 
 ./mvnw clean package -DskipTests && docker-compose up --build
 ```
