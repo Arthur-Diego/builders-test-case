@@ -1,0 +1,13 @@
+{
+  "address": {
+    "city": "FOrtaleza",
+    "district": "Aldeota",
+    "number": "123",
+    "publicPlace": "Santos dumont",
+    "state": "Ceara",
+    "zipCode": "0313-46545"
+  },
+  "age": 23,
+  "documentNumber": "8791256555",
+  "name": "Arthur Diego"
+}
