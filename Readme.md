@@ -1,4 +1,4 @@
-# Itaú - TestCase
+# Builders - TestCase
 
 Simple API(Rest) for password validation following specifications
 #### Tecnologias
