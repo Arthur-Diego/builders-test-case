@@ -1,0 +1,31 @@
+version: "3.9"
+
+networks:
+  builder-network:
+    driver: bridge
+
+services:
+  builder-mysql:
+    restart: always
+    image: mysql:8.0
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    networks:
+      - builder-network
+
+  builder-api:
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: builder-api
+    environment:
+      DB_HOST: builder-mysql
+    ports:
+      - 8080:8080
+    networks:
+      - builder-network
+    depends_on:
+      - builder-mysql

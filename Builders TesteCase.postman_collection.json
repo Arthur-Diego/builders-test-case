@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "0cc89de8-1bfe-4e46-8ced-de270230a447",
+		"name": "Builders TesteCase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save or Update Client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"address\": {\r\n    \"city\": \"FOrtaleza\",\r\n    \"district\": \"Aldeota\",\r\n    \"number\": \"123\",\r\n    \"publicPlace\": \"Santos dumont\",\r\n    \"state\": \"Ceara\",\r\n    \"zipCode\": \"0313-46545\"\r\n  },\r\n  \"age\": 23,\r\n  \"documentNumber\": \"8791256555\",\r\n  \"name\": \"Arthur Diego\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/client/save?pageSize=2&pageNumber=0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"client",
+						"save"
+					],
+					"query": [
+						{
+							"key": "pageSize",
+							"value": "2"
+						},
+						{
+							"key": "pageNumber",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query with filters",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"address\": {\r\n\r\n    \"state\": \"Rio Grande do\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/client/filters",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"client",
+						"filters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query Pageable",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"address\": {\r\n    \"city\": \"FOrtaleza\",\r\n    \"district\": \"Aldeota\",\r\n    \"number\": \"123\",\r\n    \"publicPlace\": \"Santos dumont\",\r\n    \"state\": \"Ceara\",\r\n    \"zipCode\": \"0313-46545\"\r\n  },\r\n  \"age\": 23,\r\n  \"documentNumber\": \"8791256555\",\r\n  \"name\": \"Arthur Diego\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/client/pageable?page=2&size=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"client",
+						"pageable"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

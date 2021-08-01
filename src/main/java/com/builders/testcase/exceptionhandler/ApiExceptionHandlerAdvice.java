@@ -29,7 +29,6 @@ public class ApiExceptionHandlerAdvice extends ResponseEntityExceptionHandler {
                     .detail(ex.getMessage())
                     .build();
         }
-        ex.printStackTrace();
         return super.handleExceptionInternal(ex, body, headers, status, request);
     }
 
@@ -37,7 +36,6 @@ public class ApiExceptionHandlerAdvice extends ResponseEntityExceptionHandler {
     public ResponseEntity<Object> handleUncaught(Exception ex, WebRequest request) {
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
         ErrorCustomized errorCustomized = createErrorCustomizedBuilder(status, ErrorCustomizedType.ERROR_SYSTEM, COMMON_DETAIL).build();
-        ex.printStackTrace();
         return handleExceptionInternal(ex, errorCustomized, new HttpHeaders(), status, request);
     }
 
