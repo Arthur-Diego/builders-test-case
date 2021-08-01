@@ -8,6 +8,8 @@ Simple API(Rest) for password validation following specifications
 * Junit
 * Swagger
 * Docker
+* Docker-Compose
+* MySQL
 #### Solução
 A solução consiste num arquitetura simples de projeto, definidas por camada.
 As principais funções da api consistem em salvar ou atualizar um objeto, usei o mesmo endpoint para isso.
