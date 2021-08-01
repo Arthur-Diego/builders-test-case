@@ -20,7 +20,7 @@ Usei uma classe a ***ApiExceptionHandlerAdvice*** para capturar as exceptions da
 Com isso consigo gerar um feedback mais amigável para o consumidor da API.
 ## Instalação
 ```bash
-git clone https://github.com/Arthur-Diego/builders--case.git
+git clone https://github.com/Arthur-Diego/builders-test-case.git
 
 cd builders-testcase/
 
